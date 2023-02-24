@@ -47,11 +47,8 @@ vim.keymap.del("n", "<leader>xq")
 vim.keymap.set("n", "<leader>lq", "<cmd>copen<cr>", { desc = "Quickfix List" })
 vim.keymap.set("n", "<leader>ll", "<cmd>lopen<cr>", { desc = "Location List" })
 
--- which-key overrides
-require("which-key").register({
-  w = {
-    name = "save/save and quit",
-    w = { ":w<cr>", "save" },
-    q = { ":wq<cr>", "save and quit" },
-  },
-}, { prefix = "<leader>" })
+-- quitting/saving
+vim.keymap.del("n", "<leader>qq")
+vim.keymap.set("n", "<leader>q", ":q<cr>", { desc = "Quit" })
+vim.keymap.set("n", "<leader>w", ":w<cr>", { desc = "Write" })
+vim.keymap.set("n", "<leader>e", ":wq<cr>", { desc = "Save and quit" })

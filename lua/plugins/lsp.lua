@@ -10,24 +10,26 @@ return {
   {
     "simrat39/rust-tools.nvim",
     ft = { "rust", "rs" },
-    keys = {
-      {
-        "<leader>rs",
-        function()
-          require("rust-tools").inlay_hints.set()
-        end,
-        desc = "Enable inlay hints",
-      },
-      {
-        "<leader>ru",
-        function()
-          require("rust-tools").inlay_hints.unset()
-        end,
-        desc = "Disable inlay hints",
-      },
-    },
+    keys = function()
+      local tools = require("rust-tools")
+      return {
+        {
+          "<leader>ru",
+          function()
+            tools.inlay_hints.set()
+          end,
+          desc = "Disable inlay hints",
+        },
+        {
+          "<leader>rs",
+          function()
+            tools.inlay_hints.set()
+          end,
+          desc = "Enable inlay hints",
+        },
+      }
+    end,
     config = function()
-      require("which-key").register({ r = { name = "RustTools" } }, { prefix = "<leader>" })
       require("rust-tools").setup({
         tools = {
           executor = require("rust-tools/executors").termopen, -- can be quickfix or termopen

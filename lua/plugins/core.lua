@@ -150,4 +150,30 @@ return {
       })
     end,
   },
+
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {
+      plugins = { spelling = true },
+    },
+    config = function(_, opts)
+      local wk = require("which-key")
+      wk.setup(opts)
+      local keymaps = {
+        mode = { "n", "v" },
+        ["<leader>b"] = { name = "+buffer" },
+        ["<leader>c"] = { name = "+code" },
+        ["<leader>f"] = { name = "+file/find" },
+        ["<leader>g"] = { name = "+git" },
+        ["<leader>s"] = { name = "+search" },
+        ["<leader>r"] = { name = "+rust-tools" },
+        ["<leader>l"] = "which_key_ignore",
+        ["<leader>gg"] = "which_key_ignore",
+        ["<leader>gG"] = "which_key_ignore",
+        ["<leader><tab>"] = "which_key_ignore",
+      }
+      wk.register(keymaps)
+    end,
+  },
 }

@@ -51,4 +51,7 @@ vim.keymap.set("n", "<leader>ll", "<cmd>lopen<cr>", { desc = "Location List" })
 vim.keymap.del("n", "<leader>qq")
 vim.keymap.set("n", "<leader>q", ":q<cr>", { desc = "Quit" })
 vim.keymap.set("n", "<leader>w", ":w<cr>", { desc = "Write" })
-vim.keymap.set("n", "<leader>e", ":wq<cr>", { desc = "Save and quit" })
+vim.keymap.set("n", "<leader>e", ":x<cr>", { desc = "Save and quit" })
+
+-- disable highlight
+vim.keymap.set("n", "<leader>h", ":noh<cr>", { desc = "Disable highlighting" })

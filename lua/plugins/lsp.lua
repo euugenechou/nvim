@@ -16,7 +16,7 @@ return {
         {
           "<leader>ru",
           function()
-            tools.inlay_hints.set()
+            tools.inlay_hints.unset()
           end,
           desc = "Disable inlay hints",
         },

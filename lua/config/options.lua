@@ -9,3 +9,4 @@ vim.opt.splitright = true
 vim.opt.relativenumber = true
 vim.opt.wrap = true
 vim.opt.sidescroll = 0
+vim.opt.smartindent = true

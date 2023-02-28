@@ -53,6 +53,7 @@ return {
       return {
         options = {
           theme = theme,
+          mode = "tabs",
           icons_enabled = false,
           component_separators = { left = "|", right = "|" },
           section_separators = { left = "", right = "" },
@@ -73,8 +74,6 @@ return {
           lualine_y = {},
           lualine_z = { "location" },
         },
-        tabline = {},
-        extensions = {},
       }
     end,
   },

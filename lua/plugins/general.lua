@@ -13,4 +13,5 @@ return {
   },
   { "tpope/vim-commentary" },
   { "junegunn/goyo.vim" },
+  { "jceb/vim-orgmode" },
 }

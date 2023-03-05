@@ -63,4 +63,8 @@ return {
       })
     end,
   },
+  {
+    "martineausimon/nvim-lilypond-suite",
+    dependencies = "MunifTanjim/nui.nvim",
+  },
 }

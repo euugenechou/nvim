@@ -3,6 +3,7 @@ return {
   { "tpope/vim-repeat" },
   { "tpope/vim-surround" },
   { "tpope/vim-unimpaired" },
+  { "tpope/vim-speeddating" },
   {
     "tpope/vim-fugitive",
     keys = function()

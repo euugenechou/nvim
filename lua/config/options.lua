@@ -10,3 +10,4 @@ vim.opt.relativenumber = true
 vim.opt.wrap = true
 vim.opt.sidescroll = 0
 vim.opt.smartindent = true
+vim.opt.foldlevel = 99

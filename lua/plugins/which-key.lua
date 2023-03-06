@@ -14,7 +14,6 @@ return {
                 ["<leader>f"] = { name = "+file/find" },
                 ["<leader>g"] = { name = "+git" },
                 ["<leader>s"] = { name = "+search" },
-                ["<leader>r"] = { name = "+rust-tools" },
             }
             wk.register(keymaps)
         end,

@@ -46,9 +46,3 @@ vim.opt.updatetime = 200 -- Save swap file and trigger CursorHold
 vim.opt.wildmode = "longest:full,full" -- Command-line completion mode
 vim.opt.winminwidth = 5 -- Minimum window width
 vim.opt.wrap = false -- Disable line wrap
-
--- formatting stuff
-vim.g.rustfmt_autosave = 1
-vim.g["clang_format#detect_style_file"] = 1
-vim.g["clang_format#auto_format"] = 1
-vim.g["clang_format#enable_fallback_style"] = 0

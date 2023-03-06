@@ -1,5 +1,10 @@
 return {
-    { "rust-lang/rust.vim" },
+    {
+        "rust-lang/rust.vim",
+        config = function()
+            vim.g.rustfmt_autosave = 1
+        end,
+    },
     {
         "simrat39/rust-tools.nvim",
         config = function()
@@ -12,7 +17,7 @@ return {
                         only_current_line = false,
                         show_parameter_hints = true,
                         parameter_hints_prefix = "<- ",
-                        other_hints_prefix = "=> ",
+                        other_hints_prefix = "-> ",
                         max_len_align = false,
                         max_len_align_padding = 1,
                         right_align = false,

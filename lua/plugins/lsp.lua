@@ -1,4 +1,5 @@
 return {
+    { "lukas-reineke/lsp-format.nvim" },
     {
         "williamboman/mason.nvim",
         cmd = "Mason",
@@ -29,6 +30,7 @@ return {
             "williamboman/mason-lspconfig.nvim",
             "hrsh7th/cmp-nvim-lsp",
             "nvim-telescope/telescope.nvim",
+            "lukas-reineke/lsp-format.nvim",
         },
         opts = {
             diagnostics = {
@@ -52,6 +54,11 @@ return {
             local function setup(server)
                 local server_opts = vim.tbl_deep_extend("force", {
                     capabilities = vim.deepcopy(capabilities),
+                    on_attach = function(client)
+                        if opts.autoformat then
+                            require("lsp-format").on_attach(client)
+                        end
+                    end,
                 }, servers[server] or {})
 
                 if opts.setup[server] then

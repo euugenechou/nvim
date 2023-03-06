@@ -5,12 +5,12 @@ vim.g.maplocalleader = " "
 -- other options
 vim.opt.autowrite = true -- Enable auto write
 vim.opt.clipboard = "unnamedplus" -- Sync with system clipboard
-vim.opt.completeopt = "menu,menuone,noselect"
-vim.opt.conceallevel = 0 -- Hide * markup for bold and italic
+vim.opt.completeopt = "menu,menuone,noselect,noinsert"
+vim.opt.conceallevel = 0 -- No concealment
 vim.opt.confirm = true -- Confirm to save changes before exiting modified buffer
 vim.opt.cursorline = true -- Enable highlighting of the current line
 vim.opt.expandtab = true -- Use spaces instead of tabs
-vim.opt.foldlevel = 99
+vim.opt.foldlevel = 99 -- Don't fold anything
 vim.opt.formatoptions = "jcroqlnt" -- tcqj
 vim.opt.grepformat = "%f:%l:%c:%m"
 vim.opt.grepprg = "rg --vimgrep"
@@ -46,3 +46,9 @@ vim.opt.updatetime = 200 -- Save swap file and trigger CursorHold
 vim.opt.wildmode = "longest:full,full" -- Command-line completion mode
 vim.opt.winminwidth = 5 -- Minimum window width
 vim.opt.wrap = false -- Disable line wrap
+
+-- formatting stuff
+vim.g.rustfmt_autosave = 1
+vim.g["clang_format#detect_style_file"] = 1
+vim.g["clang_format#auto_format"] = 1
+vim.g["clang_format#enable_fallback_style"] = 0

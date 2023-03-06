@@ -1,7 +1,7 @@
 return {
+    { "rust-lang/rust.vim" },
     {
         "simrat39/rust-tools.nvim",
-        ft = { "rust", "rs" },
         config = function()
             require("rust-tools").setup({
                 tools = {
@@ -34,6 +34,25 @@ return {
                     },
                 },
             })
+        end,
+        keys = function()
+            local tools = require("rust-tools")
+            return {
+                {
+                    "<leader>ru",
+                    function()
+                        tools.inlay_hints.unset()
+                    end,
+                    desc = "Disable inlay hints",
+                },
+                {
+                    "<leader>rs",
+                    function()
+                        tools.inlay_hints.set()
+                    end,
+                    desc = "Enable inlay hints",
+                },
+            }
         end,
     },
 }

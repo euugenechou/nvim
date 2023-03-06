@@ -37,7 +37,11 @@ return {
                 virtual_text = { spacing = 4, prefix = "●" },
                 severity_sort = true,
             },
-            autoformat = false,
+            autoformat = true,
+            format = {
+                formatting_options = nil,
+                timeout_ms = nil,
+            },
             servers = {},
             setup = {},
         },

@@ -9,6 +9,7 @@ return {
                 "haskell-language-server",
                 "rust-analyzer",
                 "ruff-lsp",
+                "texlab",
             },
         },
         config = function(plugin, opts)

@@ -1,57 +1,35 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
+-- better up/down
+vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
 -- too used to this escapism
 vim.keymap.set("i", "jj", "<esc>")
 
 -- horizontal line movement
-vim.keymap.del("n", "<C-h>")
-vim.keymap.del("n", "<C-j>")
-vim.keymap.del("n", "<C-k>")
-vim.keymap.del("n", "<C-l>")
-vim.keymap.set("n", "<C-h>", "<<", { desc = "Outdent" })
-vim.keymap.set("v", "<C-h>", "<gv", { desc = "Outdent" })
-vim.keymap.set("n", "<C-l>", ">>", { desc = "Indent" })
-vim.keymap.set("v", "<C-l>", ">gv", { desc = "Indent" })
+vim.keymap.set("n", "<C-h>", "<<", { desc = "outdent" })
+vim.keymap.set("v", "<C-h>", "<gv", { desc = "outdent" })
+vim.keymap.set("n", "<C-l>", ">>", { desc = "indent" })
+vim.keymap.set("v", "<C-l>", ">gv", { desc = "indent" })
 
 -- vertical line movement
-vim.keymap.del("n", "<A-j>")
-vim.keymap.del("n", "<A-k>")
-vim.keymap.del("i", "<A-j>")
-vim.keymap.del("i", "<A-k>")
-vim.keymap.del("v", "<A-j>")
-vim.keymap.del("v", "<A-k>")
-vim.keymap.set("n", "<C-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
-vim.keymap.set("n", "<C-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
-vim.keymap.set("i", "<C-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
-vim.keymap.set("i", "<C-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
-vim.keymap.set("v", "<C-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
-vim.keymap.set("v", "<C-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
+vim.keymap.set("n", "<C-j>", "<cmd>m .+1<cr>==", { desc = "move down" })
+vim.keymap.set("n", "<C-k>", "<cmd>m .-2<cr>==", { desc = "move up" })
+vim.keymap.set("i", "<C-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "move down" })
+vim.keymap.set("i", "<C-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "move up" })
+vim.keymap.set("v", "<C-j>", ":m '>+1<cr>gv=gv", { desc = "move down" })
+vim.keymap.set("v", "<C-k>", ":m '<-2<cr>gv=gv", { desc = "move up" })
 
--- unmap window stuff
-vim.keymap.del("n", "<leader>ww")
-vim.keymap.del("n", "<leader>wd")
-vim.keymap.del("n", "<leader>w-")
-vim.keymap.del("n", "<leader>w|")
-vim.keymap.del("n", "<leader>-")
-vim.keymap.del("n", "<leader>|")
-
--- remap lazy
-vim.keymap.del("n", "<leader>l")
-vim.keymap.set("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy" })
-
--- lists
-vim.keymap.del("n", "<leader>xl")
-vim.keymap.del("n", "<leader>xq")
-vim.keymap.set("n", "<leader>lq", "<cmd>copen<cr>", { desc = "Quickfix List" })
-vim.keymap.set("n", "<leader>ll", "<cmd>lopen<cr>", { desc = "Location List" })
+-- plugins
+vim.keymap.set("n", "<leader>p", "<cmd>Lazy<cr>", { desc = "plugins" })
 
 -- quitting/saving
-vim.keymap.del("n", "<leader>qq")
-vim.keymap.set("n", "<leader>q", ":q<cr>", { desc = "Quit" })
-vim.keymap.set("n", "<leader>w", ":w<cr>", { desc = "Write" })
-vim.keymap.set("n", "<leader>e", ":x<cr>", { desc = "Save and quit" })
+vim.keymap.set("n", "<leader>q", ":q<cr>", { desc = "quit" })
+vim.keymap.set("n", "<leader>w", ":w<cr>", { desc = "write" })
+vim.keymap.set("n", "<leader>e", ":x<cr>", { desc = "save and quit" })
 
 -- disable highlight
-vim.keymap.set("n", "<leader>h", ":noh<cr>", { desc = "Disable highlighting" })
+vim.keymap.set("n", "<leader>h", ":noh<cr>", { desc = "disable highlighting" })
+
+-- buffers
+vim.keymap.set("n", "<S-h>", ":bp<cr>", { desc = "previous buffer" })
+vim.keymap.set("n", "<S-l>", ":bn<cr>", { desc = "next buffer" })

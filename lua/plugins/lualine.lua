@@ -72,7 +72,7 @@ return {
                     lualine_c = {},
                     lualine_x = {},
                     lualine_y = {},
-                    lualine_z = { "location" },
+                    lualine_z = {},
                 },
             }
         end,

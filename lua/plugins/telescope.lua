@@ -46,25 +46,22 @@ return {
             },
         },
         keys = {
-            -- find
+            { "<leader>fa", "<cmd>Telescope autocommands<cr>", desc = "auto commands" },
             { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "buffers" },
-            { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "find files" },
-            { "<leader>fw", "<cmd>Telescope live_grep<cr>", desc = "find word" },
+            { "<leader>fc", "<cmd>Telescope command_history<cr>", desc = "command history" },
+            { "<leader>fd", "<cmd>Telescope diagnostics<cr>", desc = "diagnostics" },
+            { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "files" },
+            { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "help pages" },
+            { "<leader>fi", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "buffer" },
+            { "<leader>fj", "<cmd>Telescope marks<cr>", desc = "jump to mark" },
+            { "<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "key maps" },
+            { "<leader>fl", "<cmd>Telescope commands<cr>", desc = "commands" },
+            { "<leader>fm", "<cmd>Telescope man_pages sections=1,2,3,4,5,6,7,8,9<cr>", desc = "man pages" },
+            { "<leader>fo", "<cmd>Telescope vim_options<cr>", desc = "options" },
             { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "recent" },
-            -- git
+            { "<leader>fw", "<cmd>Telescope live_grep<cr>", desc = "words" },
             { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "commits" },
             { "<leader>gs", "<cmd>Telescope git_status<cr>", desc = "status" },
-            -- search
-            { "<leader>sa", "<cmd>Telescope autocommands<cr>", desc = "auto commands" },
-            { "<leader>sb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "buffers" },
-            { "<leader>sc", "<cmd>Telescope command_history<cr>", desc = "command history" },
-            { "<leader>sC", "<cmd>Telescope commands<cr>", desc = "commands" },
-            { "<leader>sd", "<cmd>Telescope diagnostics<cr>", desc = "diagnostics" },
-            { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "help pages" },
-            { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "key maps" },
-            { "<leader>sM", "<cmd>Telescope man_pages<cr>", desc = "man pages" },
-            { "<leader>sm", "<cmd>Telescope marks<cr>", desc = "jump to mark" },
-            { "<leader>so", "<cmd>Telescope vim_options<cr>", desc = "options" },
         }
     },
 }

@@ -1,5 +1,4 @@
--- Set <space> as the leader key.
--- Needs to happen before plugins are required.
+-- Leader key must be set before plugins are required.
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -22,10 +21,9 @@ require('lazy').setup({
     { import = "plugins" },
   },
   defaults = {
-    lazy = false,    -- Don't lazy load by default.
-    version = false, -- Always use the latest git commit.
+    lazy = false,                -- Don't lazy load by default.
+    version = false,             -- Always use the latest git commit.
   },
-  install = { colorscheme = { "gruvbox-material" } },
   checker = { enabled = false }, -- Don't auto-check for updates.
   performance = {
     rtp = {
@@ -43,6 +41,3 @@ require('lazy').setup({
 require('config.options')
 require('config.keymaps')
 require('config.autocmds')
-
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et

@@ -9,6 +9,8 @@ end
 local servers = {
   clangd = {},
   rust_analyzer = {},
+  bashls = {},
+  hls = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -69,30 +71,30 @@ cmp.setup {
     end,
   },
   mapping = cmp.mapping.preset.insert({
-        ['<C-b>'] = cmp.mapping.scroll_docs(-2),
-        ['<C-f>'] = cmp.mapping.scroll_docs(2),
-        ['<C-n>'] = cmp.mapping(function(fallback)
+    ['<C-b>'] = cmp.mapping.scroll_docs(-2),
+    ['<C-f>'] = cmp.mapping.scroll_docs(2),
+    ['<C-n>'] = cmp.mapping(function(fallback)
       if luasnip.jumpable(1) then
         luasnip.jump(1)
       else
         fallback()
       end
     end, { 'i', 's' }),
-        ['<C-p>'] = cmp.mapping(function(fallback)
+    ['<C-p>'] = cmp.mapping(function(fallback)
       if luasnip.jumpable(-1) then
         luasnip.jump(-1)
       else
         fallback()
       end
     end, { 'i', 's' }),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = false }),
-        ['<S-CR>'] = cmp.mapping.confirm({
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.confirm({ select = false }),
+    ['<S-CR>'] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
       select = false,
     }),
-        ['<Tab>'] = cmp.mapping(function(fallback)
+    ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
       elseif has_words_before() then
@@ -101,7 +103,7 @@ cmp.setup {
         fallback()
       end
     end, { 'i', 's' }),
-        ['<S-Tab>'] = cmp.mapping(function(fallback)
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
       else

@@ -1,7 +1,8 @@
 # nvim
 
-[Neovim](https://github.com/neovim/neovim) config based on the [LazyVim starter
-template](https://github.com/neovim/neovim).
+[Neovim](https://github.com/neovim/neovim) config based on the [LazyVim
+template](https://github.com/neovim/neovim) and [Kickstart
+template](https://github.com/nvim-lua/kickstart.nvim)
 
 ## Installation
 

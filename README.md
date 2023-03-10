@@ -6,6 +6,6 @@ template](https://github.com/nvim-lua/kickstart.nvim).
 
 ## Installation
 
-```shell
-git clone https://github.com/euugenechou/nvim.git ~/.config/nvim
+```bash
+./install.sh
 ```

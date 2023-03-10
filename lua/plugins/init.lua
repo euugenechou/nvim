@@ -1,11 +1,11 @@
 return {
   {
     -- colorscheme
-    'catppuccin/nvim',
-    name = 'catppuccin',
+    'ellisonleao/gruvbox.nvim',
     lazy = false,
     priority = 1000,
   },
+
   {
     -- indent lines
     'lukas-reineke/indent-blankline.nvim',

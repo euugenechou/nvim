@@ -56,15 +56,20 @@ require("gruvbox").setup({
     -- ui
     ColorColumn                = { bg = colors.bg },
     Conceal                    = { fg = colors.black },
+    CurSearch                  = { fg = colors.magenta, bg = colors.bg },
     CursorColumn               = { bg = colors.bg },
     CursorLine                 = { bg = colors.black },
     CursorLineNr               = { fg = colors.fg, bg = colors.bg },
     CursorPmenu                = { fg = colors.fg, bg = colors.bg },
     LineNr                     = { fg = colors.gray, bg = colors.bg },
-    IncSearch                  = { fg = colors.bg, bg = colors.red },
+    IncSearch                  = { fg = colors.magenta, bg = colors.bg },
     Pmenu                      = { fg = colors.fg, bg = colors.black },
     PmenuSel                   = { fg = colors.black, bg = colors.magenta },
     PmenuSbar                  = { bg = colors.black },
+    Search                     = { fg = colors.magenta, bg = colors.bg },
+    -- different background to avoid carets in status line
+    StatusLine                 = { fg = colors.black, bg = colors.bg },
+    StatusLineNC               = { fg = colors.black, bg = colors.black },
     -- telescope
     TelescopeNormal            = { fg = colors.fg, bg = colors.bg },
     TelescopeBorder            = { fg = colors.gray, bg = colors.bg },

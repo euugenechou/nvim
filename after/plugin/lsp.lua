@@ -7,10 +7,8 @@ local on_attach = function(_, bufnr)
 end
 
 local servers = {
-  clangd = {},
   rust_analyzer = {},
   bashls = {},
-  hls = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },

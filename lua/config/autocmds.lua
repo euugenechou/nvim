@@ -3,6 +3,11 @@ vim.api.nvim_create_autocmd({ "BufWritePre", "FileWritePre" }, {
   command = "%s/\\s\\+$//e",
 })
 
+-- strip trailing blank lines
+vim.api.nvim_create_autocmd({ "BufWritePre", "FileWritePre" }, {
+  command = ":%s#\\($\\n\\s*\\)\\+\\%$##"
+})
+
 -- highlight yanks
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()

@@ -77,4 +77,5 @@ return {
   'tpope/vim-sleuth',          -- autodetect tabstops/shiftwidth
   'tpope/vim-speeddating',     -- incrementing dates
   'tpope/vim-surround',        -- surrounding
+  'ThePrimeagen/harpoon',      -- mark-based navigation
 }

@@ -45,19 +45,15 @@ require('telescope').setup {
     layout_strategy = "horizontal",
     layout_config = {
       horizontal = {
-        preview_width = 0.55,
+        preview_width = 0.5,
         results_width = 0.8,
       },
       vertical = {
         mirror = false,
       },
-      width = 0.87,
-      height = 0.80,
-      preview_cutoff = 120,
+      width = 0.8,
+      height = 0.8,
     },
-    winblend = 0,
-    border = {},
-    borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
   },
 }
 
@@ -73,9 +69,7 @@ nmap("<leader>fa", "<cmd>Telescope autocommands<cr>", "auto commands")
 nmap("<leader>fc", "<cmd>Telescope command_history<cr>", "command history")
 nmap("<leader>fd", "<cmd>Telescope diagnostics<cr>", "diagnostics")
 nmap("<leader>ff", "<cmd>Telescope find_files<cr>", "files")
-nmap("<leader>fh", "<cmd>Telescope buffers<cr>", "buffers")
 nmap("<leader>fi", "<cmd>Telescope current_buffer_fuzzy_find<cr>", "buffer")
-nmap("<leader>fj", "<cmd>Telescope marks<cr>", "jump to mark")
 nmap("<leader>fr", "<cmd>Telescope oldfiles<cr>", "recent")
 nmap("<leader>fw", "<cmd>Telescope live_grep<cr>", "words")
 

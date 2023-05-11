@@ -83,10 +83,10 @@ require("gruvbox").setup({
     TelescopePreviewLine       = { bg = colors.bg1 },
     TelescopePromptBorder      = { fg = colors.black, bg = colors.black },
     TelescopePromptCounter     = { fg = colors.black, bg = colors.black },
-    TelescopePromptPrefix      = { fg = colors.red, bg = colors.black },
+    TelescopePromptPrefix      = { fg = colors.magenta, bg = colors.black },
     TelescopeResultsBorder     = { fg = colors.black, bg = colors.black },
     TelescopeSelection         = { fg = colors.magenta, bg = colors.bg1 },
-    TelescopeSelectionCaret    = { fg = colors.magenta, bg = colors.black },
+    TelescopeSelectionCaret    = { fg = colors.magenta, bg = colors.bg1 },
     -- code
     ['@annotation']            = { fg = colors.magenta },
     ['@attribute']             = { fg = colors.magenta },

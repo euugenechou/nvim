@@ -61,6 +61,7 @@ require("gruvbox").setup({
     CursorLine                 = { bg = colors.black },
     CursorLineNr               = { fg = colors.magenta, bg = colors.bg },
     CursorPmenu                = { fg = colors.fg, bg = colors.bg },
+    EndOfBuffer                = { fg = colors.bg, bg = colors.bg },
     LineNr                     = { fg = colors.gray, bg = colors.bg },
     IncSearch                  = { fg = colors.magenta, bg = colors.bg },
     Pmenu                      = { fg = colors.fg, bg = colors.black },

@@ -68,6 +68,7 @@ require("gruvbox").setup({
     PmenuSel                   = { fg = colors.black, bg = colors.magenta },
     PmenuSbar                  = { bg = colors.black },
     Search                     = { fg = colors.magenta, bg = colors.bg },
+    WinSeparator               = { fg = colors.bg1, bg = colors.bg },
     -- different background to avoid carets in status line
     StatusLine                 = { fg = colors.black, bg = colors.bg },
     StatusLineNC               = { fg = colors.black, bg = colors.black },

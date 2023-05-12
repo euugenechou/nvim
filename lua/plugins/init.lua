@@ -41,6 +41,13 @@ return {
     }
   },
   {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim"
+    }
+  },
+  {
     -- fuzzy finding with fzf (only install if `make` is available)
     'nvim-telescope/telescope-fzf-native.nvim',
     build = 'make',
@@ -60,6 +67,13 @@ return {
     "martineausimon/nvim-lilypond-suite",
     dependencies = "MunifTanjim/nui.nvim",
   },
+  {
+    -- marking and jumping
+    'ThePrimeagen/harpoon',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    }
+  },
   'akinsho/bufferline.nvim',   -- snazzy buffer/tab line
   'echasnovski/mini.pairs',    -- auto pairs
   'folke/which-key.nvim',      -- help for key mapping
@@ -77,5 +91,4 @@ return {
   'tpope/vim-sleuth',          -- autodetect tabstops/shiftwidth
   'tpope/vim-speeddating',     -- incrementing dates
   'tpope/vim-surround',        -- surrounding
-  'ThePrimeagen/harpoon',      -- mark-based navigation
 }

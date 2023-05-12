@@ -1,41 +1,8 @@
+local actions = require("telescope.actions")
+local fb_actions = require("telescope").extensions.file_browser.actions
+
 require('telescope').setup {
   defaults = {
-    mappings = {
-      i = {
-        ["<C-j>"] = function(...)
-          return require("telescope.actions").move_selection_next(...)
-        end,
-        ["<C-k>"] = function(...)
-          return require("telescope.actions").move_selection_previous(...)
-        end,
-        ["<C-n>"] = function(...)
-          return require("telescope.actions").cycle_history_next(...)
-        end,
-        ["<C-p>"] = function(...)
-          return require("telescope.actions").cycle_history_prev(...)
-        end,
-        ["<C-e>"] = function(...)
-          return require("telescope.actions").preview_scrolling_down(...)
-        end,
-        ["<C-y>"] = function(...)
-          return require("telescope.actions").preview_scrolling_up(...)
-        end,
-      },
-      n = {
-        ["<C-j>"] = function(...)
-          return require("telescope.actions").move_selection_next(...)
-        end,
-        ["<C-k>"] = function(...)
-          return require("telescope.actions").move_selection_previous(...)
-        end,
-        ["<C-e>"] = function(...)
-          return require("telescope.actions").preview_scrolling_down(...)
-        end,
-        ["<C-y>"] = function(...)
-          return require("telescope.actions").preview_scrolling_up(...)
-        end,
-      },
-    },
     prompt_prefix = "   ",
     entry_prefix = "  ",
     initial_mode = "insert",
@@ -53,11 +20,47 @@ require('telescope').setup {
       width = 0.8,
       height = 0.8,
     },
+    mappings = {
+      i = {
+        ["<C-j>"] = function(...) return actions.move_selection_next(...) end,
+        ["<C-k>"] = function(...) return actions.move_selection_previous(...) end,
+        ["<C-n>"] = function(...) return actions.cycle_history_next(...) end,
+        ["<C-p>"] = function(...) return actions.cycle_history_prev(...) end,
+        ["<C-e>"] = function(...) return actions.preview_scrolling_down(...) end,
+        ["<C-y>"] = function(...) return actions.preview_scrolling_up(...) end,
+      },
+      n = {
+        ["<C-j>"] = function(...) return actions.move_selection_next(...) end,
+        ["<C-k>"] = function(...) return actions.move_selection_previous(...) end,
+        ["<C-e>"] = function(...) return actions.preview_scrolling_down(...) end,
+        ["<C-y>"] = function(...) return actions.preview_scrolling_up(...) end,
+        ["<C-c>"] = function(...) return actions.close(...) end,
+      },
+    },
+  },
+  extensions = {
+    file_browser = {
+      hijack_netrw = true,
+      mappings = {
+        ["i"] = {
+          ["<C-l>"] = fb_actions.create,
+          ["<C-d>"] = fb_actions.remove,
+          ["<C-r>"] = fb_actions.rename,
+        },
+        ["n"] = {
+          ["l"] = fb_actions.create,
+          ["d"] = fb_actions.remove,
+          ["r"] = fb_actions.rename,
+        },
+      },
+    },
   },
 }
 
--- Enable telescope fzf native, if installed
-pcall(require('telescope').load_extension, 'fzf')
+-- Load extensions.
+require("telescope").load_extension("file_browser")
+require("telescope").load_extension('harpoon')
+pcall(require('telescope').load_extension, 'fzf') -- `pcall` is for handling errors.
 
 local nmap = function(keys, cmd, desc)
   vim.keymap.set('n', keys, cmd, { desc = desc })
@@ -68,7 +71,10 @@ nmap("<leader>fa", "<cmd>Telescope autocommands<cr>", "auto commands")
 nmap("<leader>fc", "<cmd>Telescope command_history<cr>", "command history")
 nmap("<leader>fd", "<cmd>Telescope diagnostics<cr>", "diagnostics")
 nmap("<leader>ff", "<cmd>Telescope find_files<cr>", "files")
+nmap("<leader>fh", "<cmd>Telescope harpoon marks<cr>", "list harpoons")
 nmap("<leader>fi", "<cmd>Telescope current_buffer_fuzzy_find<cr>", "buffer")
+nmap("<leader>fj", function() return require("harpoon.mark").add_file() end, "harpoon file")
+nmap("<leader>fk", function() return require("harpoon.mark").rm_file() end, "unharpoon file")
 nmap("<leader>fr", "<cmd>Telescope oldfiles<cr>", "recent")
 nmap("<leader>fw", "<cmd>Telescope live_grep<cr>", "words")
 
@@ -80,3 +86,24 @@ nmap("<leader>sk", "<cmd>Telescope keymaps<cr>", "key maps")
 nmap("<leader>sl", "<cmd>Telescope commands<cr>", "commands")
 nmap("<leader>sm", "<cmd>Telescope man_pages sections=1,2,3,4,5,6,7,8,9<cr>", "man pages")
 nmap("<leader>so", "<cmd>Telescope vim_options<cr>", "options")
+
+-- TODO: clean up
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>tt",
+  "<cmd>Telescope file_browser<cr>",
+  {
+    desc = "Browse files",
+    noremap = true,
+  }
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>th",
+  "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>",
+  {
+    noremap = true,
+    desc = "Browse files (current buffer)",
+  }
+)

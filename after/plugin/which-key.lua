@@ -11,5 +11,6 @@ wk.register(
     ["<leader>f"] = { name = "+file/find" },
     ["<leader>g"] = { name = "+git" },
     ["<leader>s"] = { name = "+search" },
+    ["<leader>t"] = { name = "+browse" },
   }
 )

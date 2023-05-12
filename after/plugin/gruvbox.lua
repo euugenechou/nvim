@@ -66,7 +66,7 @@ require("gruvbox").setup({
     LineNr                          = { fg = colors.gray, bg = colors.bg },
     NonText                         = { fg = colors.bg, bg = colors.bg },
     Pmenu                           = { fg = colors.fg, bg = colors.black },
-    PmenuSbar                       = { bg = colors.black },
+    PmenuSbar                       = { fg = colors.gray, bg = colors.black },
     PmenuSel                        = { fg = colors.black, bg = colors.magenta },
     Search                          = { fg = colors.magenta, bg = colors.bg },
     Visual                          = { bg = colors.bg1 },

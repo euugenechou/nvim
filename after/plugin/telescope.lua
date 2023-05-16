@@ -43,12 +43,12 @@ require('telescope').setup {
       hijack_netrw = true,
       mappings = {
         ["i"] = {
-          ["<C-l>"] = fb_actions.create,
+          ["<C-n>"] = fb_actions.create,
           ["<C-d>"] = fb_actions.remove,
           ["<C-r>"] = fb_actions.rename,
         },
         ["n"] = {
-          ["l"] = fb_actions.create,
+          ["n"] = fb_actions.create,
           ["d"] = fb_actions.remove,
           ["r"] = fb_actions.rename,
         },

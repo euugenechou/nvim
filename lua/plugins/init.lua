@@ -74,8 +74,9 @@ return {
       'nvim-lua/plenary.nvim',
     }
   },
-  'akinsho/bufferline.nvim',   -- snazzy buffer/tab line
+  'nanozuki/tabby.nvim',       -- better tabline
   'echasnovski/mini.pairs',    -- auto pairs
+  'echasnovski/mini.surround', -- surrounding
   'folke/which-key.nvim',      -- help for key mapping
   'ggandor/flit.nvim',         -- horizontal movement
   'ggandor/leap.nvim',         -- vertical movement
@@ -90,5 +91,4 @@ return {
   'tpope/vim-rhubarb',         -- the hub of GitHub
   'tpope/vim-sleuth',          -- autodetect tabstops/shiftwidth
   'tpope/vim-speeddating',     -- incrementing dates
-  'tpope/vim-surround',        -- surrounding
 }

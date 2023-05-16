@@ -33,7 +33,6 @@ local theme = {
   },
 }
 
-
 require('lualine').setup({
   options = {
     theme = theme,

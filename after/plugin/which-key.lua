@@ -8,7 +8,7 @@ wk.register(
   {
     mode = { "n", "v" },
     ["<leader>b"] = { name = "+buffer" },
-    ["<leader>f"] = { name = "+file/find" },
+    ["<leader>f"] = { name = "+find" },
     ["<leader>g"] = { name = "+git" },
     ["<leader>s"] = { name = "+search" },
     ["<leader>t"] = { name = "+browse" },

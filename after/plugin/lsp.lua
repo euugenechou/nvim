@@ -169,6 +169,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+-- Only use treesitter highlighting.
+for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+  vim.api.nvim_set_hl(0, group, {})
+end
+
 local nmap = function(keys, func, desc)
   vim.keymap.set('n', keys, func, { desc = desc })
 end

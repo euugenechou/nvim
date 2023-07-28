@@ -75,6 +75,8 @@ require("gruvbox").setup({
     PmenuSbar                       = { fg = colors.gray, bg = colors.black },
     PmenuSel                        = { fg = colors.black, bg = colors.magenta },
     Search                          = { fg = colors.magenta, bg = colors.bg },
+    TabLine                         = { bg = colors.black },
+    TabLineFill                     = { bg = colors.black },
     Visual                          = { bg = colors.bg1 },
     VisualNos                       = { bg = colors.bg1 },
     Whitespace                      = { fg = colors.bg, bg = colors.bg },
@@ -118,6 +120,8 @@ require("gruvbox").setup({
     -- telescope (selection)
     TelescopeSelection              = { fg = colors.magenta, bg = colors.bg1 },
     TelescopeSelectionCaret         = { fg = colors.magenta, bg = colors.bg1 },
+    -- aerial
+    AerialLine                      = { fg = colors.magenta },
     -- code
     ['@annotation']                 = { fg = colors.magenta },
     ['@attribute']                  = { fg = colors.magenta },

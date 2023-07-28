@@ -59,7 +59,8 @@ require('telescope').setup {
 
 -- Load extensions.
 require("telescope").load_extension("file_browser")
-require("telescope").load_extension('harpoon')
+require("telescope").load_extension("harpoon")
+require("telescope").load_extension("aerial")
 pcall(require('telescope').load_extension, 'fzf') -- `pcall` is for handling errors.
 
 local nmap = function(keys, cmd, desc)
@@ -67,15 +68,17 @@ local nmap = function(keys, cmd, desc)
 end
 
 -- Finding
-nmap("<leader>fa", "<cmd>Telescope autocommands<cr>", "auto commands")
+nmap("<leader>fa", "<cmd>Telescope autocommands<cr>", "list autocommands")
+nmap("<leader>fb", "<cmd>Telescope buffers<cr>", "list buffers")
 nmap("<leader>fc", "<cmd>Telescope command_history<cr>", "command history")
-nmap("<leader>fd", "<cmd>Telescope diagnostics<cr>", "diagnostics")
-nmap("<leader>ff", "<cmd>Telescope find_files<cr>", "files")
+nmap("<leader>fd", "<cmd>Telescope diagnostics<cr>", "list diagnostics")
+nmap("<leader>ff", "<cmd>Telescope find_files<cr>", "find files")
 nmap("<leader>fh", "<cmd>Telescope harpoon marks<cr>", "list marks")
-nmap("<leader>fi", "<cmd>Telescope current_buffer_fuzzy_find<cr>", "buffer")
+nmap("<leader>fi", "<cmd>Telescope current_buffer_fuzzy_find<cr>", "find in buffer")
 nmap("<leader>fj", function() return require("harpoon.mark").add_file() end, "mark file")
 nmap("<leader>fr", "<cmd>Telescope oldfiles<cr>", "recent")
-nmap("<leader>fw", "<cmd>Telescope live_grep<cr>", "words")
+nmap("<leader>fs", "<cmd>Telescope aerial<cr>", "aerial")
+nmap("<leader>fw", "<cmd>Telescope live_grep<cr>", "find word")
 
 -- Searching
 nmap("<leader>sc", "<cmd>Telescope git_commits<cr>", "commits")

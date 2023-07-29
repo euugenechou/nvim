@@ -73,9 +73,7 @@ nmap("<leader>fb", "<cmd>Telescope buffers<cr>", "list buffers")
 nmap("<leader>fc", "<cmd>Telescope command_history<cr>", "command history")
 nmap("<leader>fd", "<cmd>Telescope diagnostics<cr>", "list diagnostics")
 nmap("<leader>ff", "<cmd>Telescope find_files<cr>", "find files")
-nmap("<leader>fh", "<cmd>Telescope harpoon marks<cr>", "list marks")
 nmap("<leader>fi", "<cmd>Telescope current_buffer_fuzzy_find<cr>", "find in buffer")
-nmap("<leader>fj", function() return require("harpoon.mark").add_file() end, "mark file")
 nmap("<leader>fl", "<cmd>Telescope jumplist<cr>", "jumplist")
 nmap("<leader>fr", "<cmd>Telescope lsp_references<cr>", "references")
 nmap("<leader>fs", "<cmd>Telescope aerial<cr>", "aerial")
@@ -90,10 +88,14 @@ nmap("<leader>sl", "<cmd>Telescope commands<cr>", "commands")
 nmap("<leader>sm", "<cmd>Telescope man_pages sections=1,2,3,4,5,6,7,8,9<cr>", "man pages")
 nmap("<leader>so", "<cmd>Telescope vim_options<cr>", "options")
 
+-- Harpoon
+nmap("<leader>ha", "<cmd>Telescope harpoon marks<cr>", "list harpoons")
+nmap("<leader>hh", function() return require("harpoon.mark").add_file() end, "harpoon file")
+
 -- TODO: clean up
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>tt",
+  "<leader>pf",
   "<cmd>Telescope file_browser<cr>",
   {
     desc = "Browse files",
@@ -103,7 +105,7 @@ vim.api.nvim_set_keymap(
 
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>th",
+  "<leader>ph",
   "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>",
   {
     noremap = true,

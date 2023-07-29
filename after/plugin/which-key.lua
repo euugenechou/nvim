@@ -8,10 +8,11 @@ wk.register(
   {
     mode = { "n", "v" },
     ["<leader>a"] = { name = "+aerial" },
-    ["<leader>b"] = { name = "+buffer" },
     ["<leader>f"] = { name = "+find" },
     ["<leader>g"] = { name = "+git" },
+    ["<leader>h"] = { name = "+harpoon" },
+    ["<leader>p"] = { name = "+browse" },
     ["<leader>s"] = { name = "+search" },
-    ["<leader>t"] = { name = "+browse" },
+    ["<leader>t"] = { name = "+trouble" },
   }
 )

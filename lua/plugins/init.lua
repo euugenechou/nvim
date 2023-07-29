@@ -5,7 +5,6 @@ return {
     lazy = false,
     priority = 1000,
   },
-
   {
     -- indent lines
     'lukas-reineke/indent-blankline.nvim',
@@ -86,6 +85,7 @@ return {
   'echasnovski/mini.pairs',    -- auto pairs
   'echasnovski/mini.surround', -- surrounding
   'folke/which-key.nvim',      -- help for key mapping
+  'folke/trouble.nvim',        -- diagnostics
   'ggandor/flit.nvim',         -- horizontal movement
   'ggandor/leap.nvim',         -- vertical movement
   'lewis6991/gitsigns.nvim',   -- git diagnostic signs

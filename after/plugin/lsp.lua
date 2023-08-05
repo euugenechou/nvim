@@ -7,14 +7,14 @@ local on_attach = function(_, bufnr)
 end
 
 local servers = {
-  rust_analyzer = {},
-  bashls = {},
-  lua_ls = {
-    Lua = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
-    },
-  },
+  -- rust_analyzer = {},
+  -- bashls = {},
+  -- lua_ls = {
+  --   Lua = {
+  --     workspace = { checkThirdParty = false },
+  --     telemetry = { enable = false },
+  --   },
+  -- },
 }
 
 -- Setup neovim lua configuration.

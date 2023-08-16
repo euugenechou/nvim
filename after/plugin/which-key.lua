@@ -11,6 +11,7 @@ wk.register(
     ["<leader>f"] = { name = "+find" },
     ["<leader>g"] = { name = "+git" },
     ["<leader>h"] = { name = "+harpoon" },
+    ["<leader>l"] = { name = "+lsp" },
     ["<leader>p"] = { name = "+browse" },
     ["<leader>s"] = { name = "+search" },
     ["<leader>t"] = { name = "+trouble" },

@@ -35,7 +35,7 @@ keymap("v", "<C-j>", ":m '>+1<cr>gv=gv", "move down")
 keymap("v", "<C-k>", ":m '<-2<cr>gv=gv", "move up")
 
 -- plugins
-keymap("n", "<leader>p", "<cmd>Lazy<cr>", "plugins")
+keymap("n", "<leader>L", "<cmd>Lazy<cr>", "plugins")
 
 -- quitting/saving
 keymap("n", "<leader>q", ":q<cr>", "quit")

@@ -7,15 +7,15 @@ vim.cmd('highlight IndentBlanklineIndent4 guifg=' .. colors.black)
 vim.cmd('highlight IndentBlanklineIndent5 guifg=' .. colors.black)
 vim.cmd('highlight IndentBlanklineIndent6 guifg=' .. colors.black)
 
-require("indent_blankline").setup {
-  show_trailing_blankline_ident = false,
-  char_highlight_list = {
-    "IndentBlanklineIndent1",
-    "IndentBlanklineIndent1",
-    "IndentBlanklineIndent2",
-    "IndentBlanklineIndent3",
-    "IndentBlanklineIndent4",
-    "IndentBlanklineIndent5",
-    "IndentBlanklineIndent6",
-  },
+require("ibl").setup {
+    show_trailing_blankline_ident = false,
+    char_highlight_list = {
+        "IndentBlanklineIndent1",
+        "IndentBlanklineIndent1",
+        "IndentBlanklineIndent2",
+        "IndentBlanklineIndent3",
+        "IndentBlanklineIndent4",
+        "IndentBlanklineIndent5",
+        "IndentBlanklineIndent6",
+    },
 }

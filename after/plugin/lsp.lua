@@ -7,7 +7,11 @@ local on_attach = function(_, bufnr)
 end
 
 local servers = {
-  -- rust_analyzer = {},
+  rust_analyzer = {
+    ["rust-analyzer"] = {
+      cargo = { features = "all" }
+    }
+  },
   -- bashls = {},
   -- lua_ls = {
   --   Lua = {

@@ -206,6 +206,7 @@ end
 
 nmap("H", "<cmd>BufferLineCyclePrev<cr>", "cycle to previous buffer")
 nmap("L", "<cmd>BufferLineCycleNext<cr>", "cycle to next buffer")
+nmap("<leader>j", "<cmd>:bd<cr>", "close buffer")
 
 nmap("<leader>1", "<cmd>BufferLineGoToBuffer1<cr>", "switch to buffer 1")
 nmap("<leader>2", "<cmd>BufferLineGoToBuffer2<cr>", "switch to buffer 2")

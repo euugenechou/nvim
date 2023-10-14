@@ -60,6 +60,105 @@ require("bufferline").setup{
     numbers_selected = {
       fg = colors.fg,
     },
+    diagnostic = {
+      bg = colors.black,
+    },
+    diagnostic_visible = {
+      bg = colors.black,
+    },
+    diagnostic_selected = {
+      bg = colors.black,
+    },
+    hint = {
+      bg = colors.black,
+    },
+    hint_visible = {
+      bg = colors.black,
+    },
+    hint_selected = {
+      bg = colors.black,
+    },
+    hint_diagnostic = {
+      bg = colors.black,
+    },
+    hint_diagnostic_visible = {
+      bg = colors.black,
+    },
+    hint_diagnostic_selected = {
+      bg = colors.black,
+    },
+    info = {
+      bg = colors.black,
+    },
+    info_visible = {
+      bg = colors.black,
+    },
+    info_selected = {
+      bg = colors.black,
+    },
+    info_diagnostic = {
+      bg = colors.black,
+    },
+    info_diagnostic_visible = {
+      bg = colors.black,
+    },
+    info_diagnostic_selected = {
+      bg = colors.black,
+    },
+    warning = {
+      bg = colors.black,
+    },
+    warning_visible = {
+      bg = colors.black,
+    },
+    warning_selected = {
+      bg = colors.black,
+    },
+    warning_diagnostic = {
+      bg = colors.black,
+    },
+    warning_diagnostic_visible = {
+      bg = colors.black,
+    },
+    warning_diagnostic_selected = {
+      bg = colors.black,
+    },
+    error = {
+      bg = colors.black,
+    },
+    error_visible = {
+      bg = colors.black,
+    },
+    error_selected = {
+      bg = colors.black,
+    },
+    error_diagnostic = {
+      bg = colors.black,
+    },
+    error_diagnostic_visible = {
+      bg = colors.black,
+    },
+    error_diagnostic_selected = {
+      bg = colors.black,
+    },
+    modified = {
+      bg = colors.black,
+    },
+    modified_visible = {
+      bg = colors.black,
+    },
+    modified_selected = {
+      bg = colors.black,
+    },
+    duplicate = {
+      bg = colors.black,
+    },
+    duplicate_visible = {
+      bg = colors.black,
+    },
+    duplicate_selected = {
+      bg = colors.black,
+    },
     separator_selected = {
       fg = colors.black,
       bg = colors.black,

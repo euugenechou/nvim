@@ -1,7 +1,7 @@
 require("aerial").setup({})
 
 local nmap = function(keys, cmd, desc)
-  vim.keymap.set('n', keys, cmd, { desc = desc })
+	vim.keymap.set("n", keys, cmd, { desc = desc })
 end
 
 nmap("<leader>at", "<cmd>AerialToggle<cr>", "toggle sidebar")

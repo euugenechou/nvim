@@ -1,19 +1,19 @@
 require("trouble").setup({
-  icons = false,
-  fold_open = "v",
-  fold_closed = ">",
-  indent_lines = false,
-  signs = {
-    error = "error",
-    warning = "warn",
-    hint = "hint",
-    information = "info"
-  },
-  use_diagnostic_signs = true
+	icons = false,
+	fold_open = "v",
+	fold_closed = ">",
+	indent_lines = false,
+	signs = {
+		error = "error",
+		warning = "warn",
+		hint = "hint",
+		information = "info",
+	},
+	use_diagnostic_signs = true,
 })
 
 local nmap = function(keys, cmd, desc)
-  vim.keymap.set('n', keys, cmd, { desc = desc })
+	vim.keymap.set("n", keys, cmd, { desc = desc })
 end
 
 nmap("<leader>tt", "<cmd>TroubleToggle<cr>", "toggle diagnostics")

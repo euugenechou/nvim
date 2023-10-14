@@ -1,4 +1,4 @@
-require('flit').setup({
-  labeled_modes = 'nx',
-  multiline = false,
+require("flit").setup({
+	labeled_modes = "nx",
+	multiline = false,
 })

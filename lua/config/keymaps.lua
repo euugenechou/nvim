@@ -1,17 +1,17 @@
 local keymap = function(modes, keys, cmd, desc)
-  vim.keymap.set(modes, keys, cmd, { desc = desc })
+	vim.keymap.set(modes, keys, cmd, { desc = desc })
 end
 
 local keymap_silent = function(modes, keys, cmd, desc)
-  vim.keymap.set(modes, keys, cmd, { desc = desc, silent = true })
+	vim.keymap.set(modes, keys, cmd, { desc = desc, silent = true })
 end
 
 local keymap_manual = function(modes, keys, cmd, opts)
-  vim.keymap.set(modes, keys, cmd, opts)
+	vim.keymap.set(modes, keys, cmd, opts)
 end
 
 -- don't move
-keymap_silent({ 'n', 'v' }, '<Space>', '<Nop>', "freeze")
+keymap_silent({ "n", "v" }, "<Space>", "<Nop>", "freeze")
 
 -- better up/down
 keymap_manual("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })

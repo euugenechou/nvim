@@ -1,70 +1,92 @@
 local actions = require("telescope.actions")
 local fb_actions = require("telescope").extensions.file_browser.actions
 
-require('telescope').setup {
-  defaults = {
-    prompt_prefix = "   ",
-    entry_prefix = "  ",
-    initial_mode = "insert",
-    selection_strategy = "reset",
-    sorting_strategy = "ascending",
-    layout_strategy = "horizontal",
-    layout_config = {
-      horizontal = {
-        preview_width = 0.5,
-        results_width = 0.8,
-      },
-      vertical = {
-        mirror = false,
-      },
-      width = 0.8,
-      height = 0.8,
-    },
-    mappings = {
-      i = {
-        ["<C-j>"] = function(...) return actions.move_selection_next(...) end,
-        ["<C-k>"] = function(...) return actions.move_selection_previous(...) end,
-        ["<C-n>"] = function(...) return actions.cycle_history_next(...) end,
-        ["<C-p>"] = function(...) return actions.cycle_history_prev(...) end,
-        ["<C-e>"] = function(...) return actions.preview_scrolling_down(...) end,
-        ["<C-y>"] = function(...) return actions.preview_scrolling_up(...) end,
-      },
-      n = {
-        ["<C-j>"] = function(...) return actions.move_selection_next(...) end,
-        ["<C-k>"] = function(...) return actions.move_selection_previous(...) end,
-        ["<C-e>"] = function(...) return actions.preview_scrolling_down(...) end,
-        ["<C-y>"] = function(...) return actions.preview_scrolling_up(...) end,
-        ["<C-c>"] = function(...) return actions.close(...) end,
-      },
-    },
-  },
-  extensions = {
-    file_browser = {
-      hijack_netrw = true,
-      mappings = {
-        ["i"] = {
-          ["<C-n>"] = fb_actions.create,
-          ["<C-d>"] = fb_actions.remove,
-          ["<C-r>"] = fb_actions.rename,
-        },
-        ["n"] = {
-          ["n"] = fb_actions.create,
-          ["d"] = fb_actions.remove,
-          ["r"] = fb_actions.rename,
-        },
-      },
-    },
-  },
-}
+require("telescope").setup({
+	defaults = {
+		prompt_prefix = "   ",
+		entry_prefix = "  ",
+		initial_mode = "insert",
+		selection_strategy = "reset",
+		sorting_strategy = "ascending",
+		layout_strategy = "horizontal",
+		layout_config = {
+			horizontal = {
+				preview_width = 0.5,
+				results_width = 0.8,
+			},
+			vertical = {
+				mirror = false,
+			},
+			width = 0.8,
+			height = 0.8,
+		},
+		mappings = {
+			i = {
+				["<C-j>"] = function(...)
+					return actions.move_selection_next(...)
+				end,
+				["<C-k>"] = function(...)
+					return actions.move_selection_previous(...)
+				end,
+				["<C-n>"] = function(...)
+					return actions.cycle_history_next(...)
+				end,
+				["<C-p>"] = function(...)
+					return actions.cycle_history_prev(...)
+				end,
+				["<C-e>"] = function(...)
+					return actions.preview_scrolling_down(...)
+				end,
+				["<C-y>"] = function(...)
+					return actions.preview_scrolling_up(...)
+				end,
+			},
+			n = {
+				["<C-j>"] = function(...)
+					return actions.move_selection_next(...)
+				end,
+				["<C-k>"] = function(...)
+					return actions.move_selection_previous(...)
+				end,
+				["<C-e>"] = function(...)
+					return actions.preview_scrolling_down(...)
+				end,
+				["<C-y>"] = function(...)
+					return actions.preview_scrolling_up(...)
+				end,
+				["<C-c>"] = function(...)
+					return actions.close(...)
+				end,
+			},
+		},
+	},
+	extensions = {
+		file_browser = {
+			hijack_netrw = true,
+			mappings = {
+				["i"] = {
+					["<C-n>"] = fb_actions.create,
+					["<C-d>"] = fb_actions.remove,
+					["<C-r>"] = fb_actions.rename,
+				},
+				["n"] = {
+					["n"] = fb_actions.create,
+					["d"] = fb_actions.remove,
+					["r"] = fb_actions.rename,
+				},
+			},
+		},
+	},
+})
 
 -- Load extensions.
 require("telescope").load_extension("file_browser")
 require("telescope").load_extension("harpoon")
 require("telescope").load_extension("aerial")
-pcall(require('telescope').load_extension, 'fzf') -- `pcall` is for handling errors.
+pcall(require("telescope").load_extension, "fzf") -- `pcall` is for handling errors.
 
 local nmap = function(keys, cmd, desc)
-  vim.keymap.set('n', keys, cmd, { desc = desc })
+	vim.keymap.set("n", keys, cmd, { desc = desc })
 end
 
 -- Finding
@@ -90,25 +112,17 @@ nmap("<leader>so", "<cmd>Telescope vim_options<cr>", "options")
 
 -- Harpoon
 nmap("<leader>ha", "<cmd>Telescope harpoon marks<cr>", "list harpoons")
-nmap("<leader>hh", function() return require("harpoon.mark").add_file() end, "harpoon file")
+nmap("<leader>hh", function()
+	return require("harpoon.mark").add_file()
+end, "harpoon file")
 
 -- TODO: clean up
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>pf",
-  "<cmd>Telescope file_browser<cr>",
-  {
-    desc = "Browse files",
-    noremap = true,
-  }
-)
+vim.api.nvim_set_keymap("n", "<leader>pf", "<cmd>Telescope file_browser<cr>", {
+	desc = "Browse files",
+	noremap = true,
+})
 
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>ph",
-  "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>",
-  {
-    noremap = true,
-    desc = "Browse files (current buffer)",
-  }
-)
+vim.api.nvim_set_keymap("n", "<leader>ph", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>", {
+	noremap = true,
+	desc = "Browse files (current buffer)",
+})

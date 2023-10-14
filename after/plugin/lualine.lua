@@ -4,32 +4,32 @@ local theme = {
 	normal = {
 		a = { fg = colors.blue, bg = colors.black, gui = "bold" },
 		b = { fg = colors.fg, bg = colors.black, gui = "bold" },
-		c = { fg = colors.gray, bg = colors.black, gui = "bold" },
+		c = { fg = colors.gray, bg = colors.black },
 	},
 	insert = {
 		a = { fg = colors.green, bg = colors.black, gui = "bold" },
 		b = { fg = colors.fg, bg = colors.black, gui = "bold" },
-		c = { fg = colors.gray, bg = colors.black, gui = "bold" },
+		c = { fg = colors.gray, bg = colors.black },
 	},
 	visual = {
 		a = { fg = colors.magenta, bg = colors.black, gui = "bold" },
 		b = { fg = colors.fg, bg = colors.black, gui = "bold" },
-		c = { fg = colors.gray, bg = colors.black, gui = "bold" },
+		c = { fg = colors.gray, bg = colors.black },
 	},
 	replace = {
 		a = { fg = colors.red, bg = colors.black, gui = "bold" },
 		b = { fg = colors.fg, bg = colors.black, gui = "bold" },
-		c = { fg = colors.gray, bg = colors.black, gui = "bold" },
+		c = { fg = colors.gray, bg = colors.black },
 	},
 	command = {
 		a = { fg = colors.yellow, bg = colors.black, gui = "bold" },
 		b = { fg = colors.fg, bg = colors.black, gui = "bold" },
-		c = { fg = colors.gray, bg = colors.black, gui = "bold" },
+		c = { fg = colors.gray, bg = colors.black },
 	},
 	inactive = {
 		a = { fg = colors.gray, bg = colors.black, gui = "bold" },
 		b = { fg = colors.fg, bg = colors.black, gui = "bold" },
-		c = { fg = colors.gray, bg = colors.black, gui = "bold" },
+		c = { fg = colors.gray, bg = colors.black },
 	},
 }
 

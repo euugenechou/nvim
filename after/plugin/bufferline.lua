@@ -48,8 +48,10 @@ require("bufferline").setup({
 			bg = colors.black,
 		},
 		buffer_selected = {
+			fg = colors.fg,
 			bg = colors.black,
 			bold = true,
+			italic = false,
 		},
 		numbers = {
 			fg = colors.gray,

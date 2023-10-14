@@ -81,7 +81,7 @@ return {
       'nvim-lua/plenary.nvim',
     }
   },
-  'nanozuki/tabby.nvim',       -- better tabline
+  'akinsho/bufferline.nvim',   -- better tabline
   'echasnovski/mini.pairs',    -- auto pairs
   'echasnovski/mini.surround', -- surrounding
   'folke/which-key.nvim',      -- help for key mapping

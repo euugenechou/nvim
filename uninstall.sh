@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Unlink configuration.
-unlink -f "$HOME/.config/nvim"
+rm -rf "$HOME/.config/nvim"
 
 # Remove existing artifacts.
 rm -rf "$HOME/.local/share/nvim"

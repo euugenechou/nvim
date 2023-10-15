@@ -39,13 +39,13 @@ return {
 			"nvim-lua/plenary.nvim",
 		},
 	},
-	{
-		"nvim-telescope/telescope-file-browser.nvim",
-		dependencies = {
-			"nvim-telescope/telescope.nvim",
-			"nvim-lua/plenary.nvim",
-		},
-	},
+	-- {
+	-- 	"nvim-telescope/telescope-file-browser.nvim",
+	-- 	dependencies = {
+	-- 		"nvim-telescope/telescope.nvim",
+	-- 		"nvim-lua/plenary.nvim",
+	-- 	},
+	-- },
 	{
 		-- fuzzy finding with fzf (only install if `make` is available)
 		"nvim-telescope/telescope-fzf-native.nvim",
@@ -93,6 +93,7 @@ return {
 	"rust-lang/rust.vim", -- stuff for a good language
 	"simrat39/rust-tools.nvim", -- tools for a good language
 	"stevearc/conform.nvim", -- formatting
+	"stevearc/oil.nvim", -- file explorer
 	"tpope/vim-commentary", -- commenting
 	"tpope/vim-eunuch", -- very cool stuff
 	"tpope/vim-fugitive", -- the git of GitHub

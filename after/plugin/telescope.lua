@@ -1,5 +1,4 @@
 local actions = require("telescope.actions")
-local fb_actions = require("telescope").extensions.file_browser.actions
 
 require("telescope").setup({
 	defaults = {
@@ -60,27 +59,27 @@ require("telescope").setup({
 			},
 		},
 	},
-	extensions = {
-		file_browser = {
-			hijack_netrw = true,
-			mappings = {
-				["i"] = {
-					["<C-n>"] = fb_actions.create,
-					["<C-d>"] = fb_actions.remove,
-					["<C-r>"] = fb_actions.rename,
-				},
-				["n"] = {
-					["n"] = fb_actions.create,
-					["d"] = fb_actions.remove,
-					["r"] = fb_actions.rename,
-				},
-			},
-		},
-	},
+	-- extensions = {
+	-- 	file_browser = {
+	-- 		hijack_netrw = true,
+	-- 		mappings = {
+	-- 			["i"] = {
+	-- 				["<C-n>"] = fb_actions.create,
+	-- 				["<C-d>"] = fb_actions.remove,
+	-- 				["<C-r>"] = fb_actions.rename,
+	-- 			},
+	-- 			["n"] = {
+	-- 				["n"] = fb_actions.create,
+	-- 				["d"] = fb_actions.remove,
+	-- 				["r"] = fb_actions.rename,
+	-- 			},
+	-- 		},
+	-- 	},
+	-- },
 })
 
 -- Load extensions.
-require("telescope").load_extension("file_browser")
+-- require("telescope").load_extension("file_browser")
 require("telescope").load_extension("harpoon")
 require("telescope").load_extension("aerial")
 pcall(require("telescope").load_extension, "fzf") -- `pcall` is for handling errors.
@@ -117,12 +116,12 @@ nmap("<leader>hh", function()
 end, "harpoon file")
 
 -- TODO: clean up
-vim.api.nvim_set_keymap("n", "<leader>pf", "<cmd>Telescope file_browser<cr>", {
-	desc = "Browse files",
-	noremap = true,
-})
+-- vim.api.nvim_set_keymap("n", "<leader>pf", "<cmd>Telescope file_browser<cr>", {
+-- 	desc = "Browse files",
+-- 	noremap = true,
+-- })
 
-vim.api.nvim_set_keymap("n", "<leader>ph", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>", {
-	noremap = true,
-	desc = "Browse files (current buffer)",
-})
+-- vim.api.nvim_set_keymap("n", "<leader>ph", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>", {
+-- 	noremap = true,
+-- 	desc = "Browse files (current buffer)",
+-- })

@@ -183,7 +183,7 @@ local nmap = function(keys, func, desc)
 end
 
 nmap("gd", "<cmd>Telescope lsp_definitions<cr>", "goto definition")
-nmap("gr", "<cmd>Telescope lsp_references<cr>", "references")
+nmap("gr", vim.lsp.buf.rename, "rename symbol")
 nmap("gD", vim.lsp.buf.declaration, "goto declaration")
 nmap("gI", "<cmd>Telescope lsp_implementations<cr>", "goto implementation")
 nmap("K", vim.lsp.buf.hover, "hover documentation")

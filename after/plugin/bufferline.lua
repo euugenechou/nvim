@@ -153,12 +153,15 @@ require("bufferline").setup({
 			bg = colors.black,
 		},
 		duplicate = {
+			fg = colors.gray,
 			bg = colors.black,
 		},
 		duplicate_visible = {
+			fg = colors.gray,
 			bg = colors.black,
 		},
 		duplicate_selected = {
+			fg = colors.magenta,
 			bg = colors.black,
 		},
 		separator_selected = {

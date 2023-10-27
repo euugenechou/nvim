@@ -81,6 +81,44 @@ return {
 			"nvim-lua/plenary.nvim",
 		},
 	},
+	{
+		-- tools for a good language
+		"simrat39/rust-tools.nvim",
+		opts = {
+			tools = {
+				-- executor = require("rust-tools/executors").termopen, -- can be quickfix or termopen
+				reload_workspace_from_cargo_toml = true,
+				inlay_hints = {
+					auto = false,
+					only_current_line = false,
+					show_parameter_hints = true,
+					parameter_hints_prefix = "<- ",
+					other_hints_prefix = "-> ",
+					max_len_align = false,
+					max_len_align_padding = 1,
+					right_align = false,
+					right_align_padding = 7,
+					highlight = "Comment",
+				},
+				hover_actions = {
+					border = {
+						{ "╭", "FloatBorder" },
+						{ "─", "FloatBorder" },
+						{ "╮", "FloatBorder" },
+						{ "│", "FloatBorder" },
+						{ "╯", "FloatBorder" },
+						{ "─", "FloatBorder" },
+						{ "╰", "FloatBorder" },
+						{ "│", "FloatBorder" },
+					},
+					auto_focus = true,
+				},
+				server = {
+					cargo = { features = "all" },
+				},
+			},
+		},
+	},
 	"akinsho/bufferline.nvim", -- better tabline
 	"echasnovski/mini.pairs", -- auto pairs
 	"echasnovski/mini.surround", -- surrounding
@@ -91,7 +129,6 @@ return {
 	"lewis6991/gitsigns.nvim", -- git diagnostic signs
 	"nvim-lualine/lualine.nvim", -- snazzy status line
 	"rust-lang/rust.vim", -- stuff for a good language
-	"simrat39/rust-tools.nvim", -- tools for a good language
 	"stevearc/conform.nvim", -- formatting
 	"stevearc/oil.nvim", -- file explorer
 	"tpope/vim-commentary", -- commenting

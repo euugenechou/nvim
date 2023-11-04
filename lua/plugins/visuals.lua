@@ -37,7 +37,6 @@ return {
 	{
 		-- better tabline
 		"akinsho/bufferline.nvim",
-		lazy = false,
 		opts = {
 			options = {
 				show_buffer_icons = true,
@@ -247,6 +246,7 @@ return {
 				},
 			},
 		},
+		lazy = false,
 		keys = {
 			{ "H", "<cmd>BufferLineCyclePrev<cr>", desc = "cycle to previous buffer" },
 			{ "L", "<cmd>BufferLineCycleNext<cr>", desc = "cycle to next buffer" },

@@ -13,6 +13,7 @@ return {
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
+		lazy = false,
 		keys = {
 			{ "]d", diagnostic_goto(true), desc = "next diagnostic" },
 			{ "[d", diagnostic_goto(false), desc = "prev diagnostic" },

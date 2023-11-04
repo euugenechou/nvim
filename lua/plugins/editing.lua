@@ -26,6 +26,7 @@ return {
 	{
 		-- diagnostics
 		"folke/trouble.nvim",
+		lazy = false,
 		keys = {
 			{ "<leader>tt", "<cmd>TroubleToggle<cr>", desc = "toggle diagnostics" },
 			{ "<leader>to", "<cmd>Trouble<cr>", desc = "open diagnostics" },
@@ -121,6 +122,7 @@ return {
 				border = "none",
 			},
 		},
+		lazy = false,
 		keys = {
 			{ "<leader>po", "<cmd>Oil .<cr>", desc = "open current directory" },
 			{ "<leader>pp", "<cmd>Oil<cr>", desc = "open parent directory" },
@@ -140,6 +142,7 @@ return {
 			"nvim-treesitter/nvim-treesitter",
 			"nvim-tree/nvim-web-devicons",
 		},
+		lazy = false,
 		keys = {
 			{ "<leader>at", "<cmd>AerialToggle<cr>", desc = "toggle sidebar" },
 			{ "<leader>aw", "<cmd>AerialNavToggle<cr>", desc = "toggle nav window" },
@@ -154,6 +157,7 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
+		lazy = false,
 		keys = {
 			-- finding
 			{ "<leader>fa", "<cmd>Telescope autocommands<cr>", desc = "list autocommands" },
@@ -267,7 +271,7 @@ return {
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
-		opts = {},
+		lazy = false,
 		keys = {
 			{ "<leader>pt", "<cmd>NvimTreeToggle<cr>", desc = "toggle explorer" },
 		},

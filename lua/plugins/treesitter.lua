@@ -25,22 +25,7 @@ return {
 			-- pcall(require('nvim-treesitter.install').update { with_sync = true })
 
 			require("nvim-treesitter.configs").setup({
-				ensure_installed = {
-					-- 'bash',
-					-- 'cpp',
-					-- 'gitcommit',
-					-- 'gitignore',
-					-- 'haskell',
-					-- 'help',
-					-- 'lua',
-					-- 'markdown',
-					-- 'markdown_inline',
-					-- 'python',
-					-- 'rust',
-					-- 'toml',
-					-- 'vim',
-					-- 'yaml',
-				},
+				ensure_installed = {},
 
 				auto_install = false,
 

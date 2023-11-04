@@ -1,24 +1,20 @@
-local servers = {
-	-- rust_analyzer = {
-	-- 	["rust-analyzer"] = {
-	-- 		cargo = { features = "all" },
-	-- 	},
-	-- },
-	-- bashls = {},
-	-- lua_ls = {
-	--   Lua = {
-	--     workspace = { checkThirdParty = false },
-	--     telemetry = { enable = false },
-	--   },
-	-- },
-}
-
--- Function to run when an LSP connects to a buffer.
 local on_attach = function(_, bufnr)
-	-- Create a command `:Format` local to the LSP buffer
-	-- vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-	--   vim.lsp.buf.format()
-	-- end, { desc = 'format current buffer with lsp' })
+	-- code navigation
+	vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>", { desc = "goto definition" })
+	vim.keymap.set("n", "gr", vim.lsp.buf.rename, { desc = "rename symbol" })
+	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "goto declaration" })
+	vim.keymap.set("n", "gI", "<cmd>Telescope lsp_implementations<cr>", { desc = "goto implementation" })
+	vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "hover documentation" })
+	vim.keymap.set("n", "gK", vim.lsp.buf.signature_help, { desc = "signature help" })
+
+	-- LSP keymaps
+	vim.keymap.set("n", "<leader>ls", "<cmd>LspInfo<cr>", { desc = "info" })
+	vim.keymap.set("n", "<leader>li", "<cmd>LspInstall<cr>", { desc = "install" })
+	vim.keymap.set("n", "<leader>ll", "<cmd>LspLog<cr>", { desc = "log" })
+	vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<cr>", { desc = "restart" })
+	vim.keymap.set("n", "<leader>la", "<cmd>LspStart<cr>", { desc = "start" })
+	vim.keymap.set("n", "<leader>lo", "<cmd>LspStop<cr>", { desc = "stop" })
+	vim.keymap.set("n", "<leader>lu", "<cmd>LspUninstall<cr>", { desc = "uninstall" })
 end
 
 local has_words_before = function()
@@ -35,47 +31,64 @@ return {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			"folke/neodev.nvim",
+			"simrat39/rust-tools.nvim", -- mega jank
 		},
-		keys = {
-			{ "gd", "<cmd>Telescope lsp_definitions<cr>", desc = "goto definition" },
-			{ "gr", vim.lsp.buf.rename, desc = "rename symbol" },
-			{ "gD", vim.lsp.buf.declaration, desc = "goto declaration" },
-			{ "gI", "<cmd>Telescope lsp_implementations<cr>", desc = "goto implementation" },
-			{ "K", vim.lsp.buf.hover, desc = "hover documentation" },
-			{ "gK", vim.lsp.buf.signature_help, desc = "signature help" },
-			{ "<leader>ls", "<cmd>LspInfo<cr>", desc = "info" },
-			{ "<leader>li", "<cmd>LspInstall<cr>", desc = "install" },
-			{ "<leader>ll", "<cmd>LspLog<cr>", desc = "log" },
-			{ "<leader>lr", "<cmd>LspRestart<cr>", desc = "restart" },
-			{ "<leader>la", "<cmd>LspStart<cr>", desc = "start" },
-			{ "<leader>lo", "<cmd>LspStop<cr>", desc = "stop" },
-			{ "<leader>lu", "<cmd>LspUninstall<cr>", desc = "uninstall" },
-			{ "<leader>lf", "<cmd>LspFormatToggle<cr>", desc = "format toggle" },
-		},
-		init = function()
-			-- Setup neovim lua configuration.
+		config = function()
 			require("neodev").setup()
+			require("mason").setup()
 
-			-- Brocast nvim-cmp's additional completion capabilities to servers.
+			-- Broadcast nvim-cmp's additional completion capabilities to servers.
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-			-- Setup mason so it can manage external tooling
-			require("mason").setup()
-
-			-- Ensure the servers above are installed
 			local mason_lspconfig = require("mason-lspconfig")
-
-			mason_lspconfig.setup({
-				ensure_installed = vim.tbl_keys(servers),
-			})
-
+			mason_lspconfig.setup()
 			mason_lspconfig.setup_handlers({
 				function(server_name)
 					require("lspconfig")[server_name].setup({
 						capabilities = capabilities,
 						on_attach = on_attach,
-						settings = servers[server_name],
+					})
+				end,
+				["rust_analyzer"] = function()
+					require("rust-tools").setup({
+						tools = {
+							reload_workspace_from_cargo_toml = true,
+							inlay_hints = {
+								auto = false,
+								only_current_line = false,
+								show_parameter_hints = true,
+								parameter_hints_prefix = "<- ",
+								other_hints_prefix = "-> ",
+								max_len_align = false,
+								max_len_align_padding = 1,
+								right_align = false,
+								right_align_padding = 7,
+								highlight = "Comment",
+							},
+							hover_actions = {
+								border = {
+									{ "╭", "FloatBorder" },
+									{ "─", "FloatBorder" },
+									{ "╮", "FloatBorder" },
+									{ "│", "FloatBorder" },
+									{ "╯", "FloatBorder" },
+									{ "─", "FloatBorder" },
+									{ "╰", "FloatBorder" },
+									{ "│", "FloatBorder" },
+								},
+								auto_focus = true,
+							},
+						},
+						server = {
+							on_attach = on_attach,
+							settings = {
+								["rust-analyzer"] = {
+									cargo = { features = "all" },
+								},
+							},
+						},
+						capabilities = capabilities,
 					})
 				end,
 			})

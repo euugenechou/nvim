@@ -122,8 +122,8 @@ return {
 			},
 		},
 		keys = {
-			{ "n", "<leader>po", "<cmd>Oil .<cr>", desc = "open current directory" },
-			{ "n", "<leader>pp", "<cmd>Oil<cr>", desc = "open parent directory" },
+			{ "<leader>po", "<cmd>Oil .<cr>", desc = "open current directory" },
+			{ "<leader>pp", "<cmd>Oil<cr>", desc = "open parent directory" },
 		},
 	},
 	{
@@ -135,8 +135,10 @@ return {
 	},
 	{
 		"stevearc/aerial.nvim",
+		opts = {},
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
+			"nvim-tree/nvim-web-devicons",
 		},
 		keys = {
 			{ "<leader>at", "<cmd>AerialToggle<cr>", desc = "toggle sidebar" },

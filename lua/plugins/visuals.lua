@@ -37,25 +37,19 @@ return {
 	{
 		-- better tabline
 		"akinsho/bufferline.nvim",
-		keys = {
-			{ "H", "<cmd>BufferLineCyclePrev<cr>", desc = "cycle to previous buffer" },
-			{ "L", "<cmd>BufferLineCycleNext<cr>", desc = "cycle to next buffer" },
-			{ "<leader>j", "<cmd>bp | sp | bn | bd<cr>", "close buffer" },
-			{ "<leader>1", "<cmd>BufferLineGoToBuffer1<cr>", desc = "switch to buffer 1" },
-			{ "<leader>2", "<cmd>BufferLineGoToBuffer2<cr>", desc = "switch to buffer 2" },
-			{ "<leader>3", "<cmd>BufferLineGoToBuffer3<cr>", desc = "switch to buffer 3" },
-			{ "<leader>4", "<cmd>BufferLineGoToBuffer4<cr>", desc = "switch to buffer 4" },
-			{ "<leader>5", "<cmd>BufferLineGoToBuffer5<cr>", desc = "switch to buffer 5" },
-			{ "<leader>6", "<cmd>BufferLineGoToBuffer6<cr>", desc = "switch to buffer 6" },
-			{ "<leader>7", "<cmd>BufferLineGoToBuffer7<cr>", desc = "switch to buffer 7" },
-			{ "<leader>8", "<cmd>BufferLineGoToBuffer8<cr>", desc = "switch to buffer 8" },
-			{ "<leader>9", "<cmd>BufferLineGoToBuffer9<cr>", desc = "switch to buffer 9" },
-		},
+		lazy = false,
 		opts = {
 			options = {
-				show_buffer_icons = false,
+				show_buffer_icons = true,
 				show_buffer_close_icons = false,
 				show_tab_indicators = true,
+				offsets = {
+					{
+						filetype = "NvimTree",
+						text = "",
+						text_align = "center",
+					},
+				},
 			},
 			highlights = {
 				fill = {
@@ -252,6 +246,20 @@ return {
 					bg = colors.black,
 				},
 			},
+		},
+		keys = {
+			{ "H", "<cmd>BufferLineCyclePrev<cr>", desc = "cycle to previous buffer" },
+			{ "L", "<cmd>BufferLineCycleNext<cr>", desc = "cycle to next buffer" },
+			{ "<leader>j", "<cmd>bp | sp | bn | bd<cr>", desc = "close buffer" },
+			{ "<leader>1", "<cmd>BufferLineGoToBuffer1<cr>", desc = "switch to buffer 1" },
+			{ "<leader>2", "<cmd>BufferLineGoToBuffer2<cr>", desc = "switch to buffer 2" },
+			{ "<leader>3", "<cmd>BufferLineGoToBuffer3<cr>", desc = "switch to buffer 3" },
+			{ "<leader>4", "<cmd>BufferLineGoToBuffer4<cr>", desc = "switch to buffer 4" },
+			{ "<leader>5", "<cmd>BufferLineGoToBuffer5<cr>", desc = "switch to buffer 5" },
+			{ "<leader>6", "<cmd>BufferLineGoToBuffer6<cr>", desc = "switch to buffer 6" },
+			{ "<leader>7", "<cmd>BufferLineGoToBuffer7<cr>", desc = "switch to buffer 7" },
+			{ "<leader>8", "<cmd>BufferLineGoToBuffer8<cr>", desc = "switch to buffer 8" },
+			{ "<leader>9", "<cmd>BufferLineGoToBuffer9<cr>", desc = "switch to buffer 9" },
 		},
 	},
 	{

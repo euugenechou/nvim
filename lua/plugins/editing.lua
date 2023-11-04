@@ -272,6 +272,7 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 		lazy = false,
+		opts = {},
 		keys = {
 			{ "<leader>pt", "<cmd>NvimTreeToggle<cr>", desc = "toggle explorer" },
 		},

@@ -107,7 +107,13 @@ return {
 						server = {
 							settings = {
 								["rust-analyzer"] = {
-									cargo = { features = "all" },
+									cargo = {
+										features = "all",
+									},
+									procMacro = {
+										enable = true,
+										attributes = true,
+									},
 								},
 							},
 							on_attach = rust_on_attach,

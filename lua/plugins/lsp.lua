@@ -17,6 +17,30 @@ local on_attach = function(_, bufnr)
 	vim.keymap.set("n", "<leader>lu", "<cmd>LspUninstall<cr>", { desc = "uninstall" })
 end
 
+-- mega mega jank
+local rust_on_attach = function(_, bufnr)
+	-- code navigation
+	vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>", { desc = "goto definition" })
+	vim.keymap.set("n", "gr", vim.lsp.buf.rename, { desc = "rename symbol" })
+	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "goto declaration" })
+	vim.keymap.set("n", "gI", "<cmd>Telescope lsp_implementations<cr>", { desc = "goto implementation" })
+	vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "hover documentation" })
+	vim.keymap.set("n", "gK", vim.lsp.buf.signature_help, { desc = "signature help" })
+
+	-- LSP keymaps
+	vim.keymap.set("n", "<leader>ls", "<cmd>LspInfo<cr>", { desc = "info" })
+	vim.keymap.set("n", "<leader>li", "<cmd>LspInstall<cr>", { desc = "install" })
+	vim.keymap.set("n", "<leader>ll", "<cmd>LspLog<cr>", { desc = "log" })
+	vim.keymap.set("n", "<leader>lr", "<cmd>LspRestart<cr>", { desc = "restart" })
+	vim.keymap.set("n", "<leader>la", "<cmd>LspStart<cr>", { desc = "start" })
+	vim.keymap.set("n", "<leader>lo", "<cmd>LspStop<cr>", { desc = "stop" })
+	vim.keymap.set("n", "<leader>lu", "<cmd>LspUninstall<cr>", { desc = "uninstall" })
+
+	-- rust specific stuff
+	vim.keymap.set("n", "<leader>lS", require("rust-tools").inlay_hints.set, { desc = "enable inlay hints" })
+	vim.keymap.set("n", "<leader>lU", require("rust-tools").inlay_hints.unset, { desc = "disable inlay hints" })
+end
+
 local has_words_before = function()
 	unpack = unpack or table.unpack
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -81,12 +105,12 @@ return {
 							},
 						},
 						server = {
-							on_attach = on_attach,
 							settings = {
 								["rust-analyzer"] = {
 									cargo = { features = "all" },
 								},
 							},
+							on_attach = rust_on_attach,
 						},
 						capabilities = capabilities,
 					})

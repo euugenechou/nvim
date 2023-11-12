@@ -20,7 +20,6 @@ local colors = {
 	dark_green = "#2d2e27",
 	dark_pink = "#ff008c",
 	dark_red = "#d03770",
-	darker_gray = "#454b59",
 	light_gray = "#9ca3b2",
 	none = "NONE",
 	peanut = "#f6d5a4",

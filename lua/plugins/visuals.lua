@@ -318,6 +318,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		opts = {
+			transparent = false,
 			themes = function(colors)
 				-- change highlight of some groups,
 				-- the key and value will be passed respectively to "nvim_set_hl"

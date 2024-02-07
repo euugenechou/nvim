@@ -26,14 +26,6 @@ keymap_silent("v", "<C-h>", "<gv", "outdent")
 keymap_silent("n", "<C-l>", ">>", "indent")
 keymap_silent("v", "<C-l>", ">gv", "indent")
 
--- vertical line movement
-keymap("n", "<C-j>", "<cmd>m .+1<cr>==", "move down")
-keymap("n", "<C-k>", "<cmd>m .-2<cr>==", "move up")
-keymap("i", "<C-j>", "<esc><cmd>m .+1<cr>==gi", "move down")
-keymap("i", "<C-k>", "<esc><cmd>m .-2<cr>==gi", "move up")
-keymap("v", "<C-j>", ":m '>+1<cr>gv=gv", "move down")
-keymap("v", "<C-k>", ":m '<-2<cr>gv=gv", "move up")
-
 -- plugins
 keymap("n", "<leader>L", "<cmd>Lazy<cr>", "plugins")
 

@@ -3,6 +3,7 @@ return {
 		-- auto pairs
 		"echasnovski/mini.pairs",
 		config = function()
+			require("mini.pairs").setup()
 			require("mini.pairs").unmap("i", "'", "''")
 		end,
 	},
